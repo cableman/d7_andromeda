@@ -1,0 +1,3 @@
+[submodule "themes/nabula"]
+	path = themes/nabula
+	url = git@github.com:aakb/nebula.git
