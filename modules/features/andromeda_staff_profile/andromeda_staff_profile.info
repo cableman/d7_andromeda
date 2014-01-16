@@ -1,0 +1,7 @@
+name = Staff profile
+description = Staff profile
+core = 7.x
+package = Andromeda
+dependencies[] = features
+features[features_api][] = api:2
+features[node][] = staff_profile
