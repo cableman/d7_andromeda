@@ -1,0 +1,14 @@
+<?php
+/**
+ * @file
+ * Helper module to change administration related settings that should be done
+ * in the theme.
+ */
+
+/**
+ * Implements hook_pathauto_alias_alter().
+ */
+function andromeda_admin_pathauto_alias_alter(&$alias, array &$context) {
+  // Force all aliases to be saved as language neutral.
+  $context['language'] = LANGUAGE_NONE;
+}

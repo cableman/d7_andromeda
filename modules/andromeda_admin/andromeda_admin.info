@@ -1,0 +1,4 @@
+name = Andromeda (admin)
+description = Administration changes to the site.
+core = 7.x
+
