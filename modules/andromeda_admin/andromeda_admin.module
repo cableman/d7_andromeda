@@ -12,3 +12,15 @@ function andromeda_admin_pathauto_alias_alter(&$alias, array &$context) {
   // Force all aliases to be saved as language neutral.
   $context['language'] = LANGUAGE_NONE;
 }
+
+/**
+ * Implements hook_entity_info_alter().
+ *
+ * Adds new view mode used in staff profiles.
+ */
+function andromeda_admin_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['staff_list'] = array(
+    'label' => t('Staff list'),
+    'custom settings' => FALSE,
+  );
+}

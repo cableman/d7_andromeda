@@ -18,7 +18,14 @@ function andromeda_staff_profile_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'staff_list' => array(
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -83,7 +90,7 @@ function andromeda_staff_profile_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
@@ -91,6 +98,16 @@ function andromeda_staff_profile_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 0,
+      ),
+      'staff_list' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -159,11 +176,18 @@ function andromeda_staff_profile_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 6,
+        'weight' => 5,
+      ),
+      'staff_list' => array(
+        'label' => 'inline',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -198,11 +222,18 @@ function andromeda_staff_profile_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'staff_list' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -264,11 +295,18 @@ function andromeda_staff_profile_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 2,
+      ),
+      'staff_list' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -330,11 +368,18 @@ function andromeda_staff_profile_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'staff_list' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
