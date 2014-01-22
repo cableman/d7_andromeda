@@ -79,11 +79,9 @@ function andromeda_staff_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Left',
-    'weight' => '0',
+    'weight' => '2',
     'children' => array(
       0 => 'field_profile_image',
-      1 => 'field_profile_name',
-      2 => 'field_profile_position',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -112,7 +110,7 @@ function andromeda_staff_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Right',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
       0 => 'field_profile_content',
       1 => 'field_profile_telephone',
