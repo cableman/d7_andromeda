@@ -21,12 +21,12 @@ function andromeda_staff_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Profile',
-    'weight' => '0',
+    'weight' => '1',
     'children' => array(
       0 => 'field_profile_image',
       1 => 'field_profile_name',
       2 => 'field_profile_content',
-      3 => 'title',
+      3 => 'field_profile_position',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -51,7 +51,7 @@ function andromeda_staff_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '5',
+    'weight' => '2',
     'children' => array(
       0 => 'field_profile_mail',
       1 => 'field_profile_telephone',
