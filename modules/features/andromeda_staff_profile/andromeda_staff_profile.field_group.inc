@@ -53,8 +53,8 @@ function andromeda_staff_profile_field_group_info() {
     'label' => 'Contact',
     'weight' => '2',
     'children' => array(
-      0 => 'field_profile_mail',
-      1 => 'field_profile_telephone',
+      0 => 'field_profile_telephone',
+      1 => 'field_profile_mail',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

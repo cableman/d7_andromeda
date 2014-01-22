@@ -160,10 +160,10 @@ function andromeda_staff_profile_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'email',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'email_default',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -174,46 +174,19 @@ function andromeda_staff_profile_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_profile_mail',
-    'label' => 'E-mail address',
-    'required' => 1,
+    'label' => 'E-mail',
+    'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'mailchimp_campaign' => 'mailchimp_campaign',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => -7,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'email',
       'settings' => array(
         'size' => 60,
       ),
-      'type' => 'text_textfield',
-      'weight' => 5,
+      'type' => 'email_textfield',
+      'weight' => 7,
     ),
   );
 
@@ -418,7 +391,7 @@ function andromeda_staff_profile_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
-  t('E-mail address');
+  t('E-mail');
   t('Image');
   t('Name');
   t('Position');
