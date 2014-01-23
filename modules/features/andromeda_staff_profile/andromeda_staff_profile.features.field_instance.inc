@@ -390,7 +390,7 @@ function andromeda_staff_profile_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_profile_telephone',
-    'label' => 'Telephone',
+    'label' => 'Telefon',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -440,7 +440,7 @@ function andromeda_staff_profile_field_default_field_instances() {
   t('Image');
   t('Name');
   t('Position');
-  t('Telephone');
+  t('Telefon');
 
   return $field_instances;
 }
