@@ -24,7 +24,7 @@ function andromeda_static_page_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_content',
-      1 => 'field_lead',
+      1 => 'field_content_images',
       2 => 'field_content_files',
       3 => 'title',
     ),
@@ -53,8 +53,8 @@ function andromeda_static_page_field_group_info() {
     'label' => 'Images',
     'weight' => '2',
     'children' => array(
-      0 => 'field_list_image',
-      1 => 'field_content_images',
+      0 => 'field_lead',
+      1 => 'field_list_image',
       2 => 'field_inline_gallery',
     ),
     'format_type' => 'fieldset',

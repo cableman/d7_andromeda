@@ -183,12 +183,14 @@ function andromeda_static_page_field_default_field_instances() {
       'settings' => array(
         'insert' => 1,
         'insert_absolute' => 0,
-        'insert_class' => '',
+        'insert_class' => 'image--content',
         'insert_default' => 'auto',
         'insert_styles' => array(
           'auto' => 0,
           'colorbox__content_images' => 0,
+          'colorbox__content_images_wide' => 0,
           'colorbox__front_page' => 0,
+          'colorbox__gallery' => 0,
           'colorbox__large' => 0,
           'colorbox__list_image' => 0,
           'colorbox__medium' => 0,
@@ -196,7 +198,9 @@ function andromeda_static_page_field_default_field_instances() {
           'icon_link' => 0,
           'image' => 0,
           'image_content_images' => 'image_content_images',
+          'image_content_images_wide' => 'image_content_images_wide',
           'image_front_page' => 0,
+          'image_gallery' => 0,
           'image_large' => 0,
           'image_list_image' => 0,
           'image_medium' => 0,
@@ -208,7 +212,7 @@ function andromeda_static_page_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -415,7 +419,7 @@ function andromeda_static_page_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 

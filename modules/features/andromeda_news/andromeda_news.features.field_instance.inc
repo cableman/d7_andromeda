@@ -18,7 +18,7 @@ function andromeda_news_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -72,6 +72,79 @@ function andromeda_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-news-field_content_images'
+  $field_instances['node-news-field_content_images'] = array(
+    'bundle' => 'news',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_content_images',
+    'label' => 'Images',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 0,
+      'file_directory' => 'content_images',
+      'file_extensions' => 'png jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'insert' => 1,
+        'insert_absolute' => 0,
+        'insert_class' => 'image--content',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 0,
+          'colorbox__content_images' => 0,
+          'colorbox__content_images_wide' => 0,
+          'colorbox__front_page' => 0,
+          'colorbox__gallery' => 0,
+          'colorbox__large' => 0,
+          'colorbox__list_image' => 0,
+          'colorbox__medium' => 0,
+          'colorbox__thumbnail' => 0,
+          'icon_link' => 0,
+          'image' => 0,
+          'image_content_images' => 'image_content_images',
+          'image_content_images_wide' => 'image_content_images_wide',
+          'image_front_page' => 0,
+          'image_gallery' => 0,
+          'image_large' => 0,
+          'image_list_image' => 0,
+          'image_medium' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-news-field_lead'
   $field_instances['node-news-field_lead'] = array(
     'bundle' => 'news',
@@ -81,15 +154,15 @@ function andromeda_news_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_default',
         'weight' => 0,
       ),
     ),
@@ -142,12 +215,8 @@ function andromeda_news_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -162,7 +231,7 @@ function andromeda_news_field_default_field_instances() {
     'label' => 'List image',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => 'list_images',
       'file_extensions' => 'png jpg jpeg',
@@ -183,7 +252,9 @@ function andromeda_news_field_default_field_instances() {
         'insert_styles' => array(
           'auto' => 0,
           'colorbox__content_images' => 0,
+          'colorbox__content_images_wide' => 0,
           'colorbox__front_page' => 0,
+          'colorbox__gallery' => 0,
           'colorbox__large' => 0,
           'colorbox__list_image' => 0,
           'colorbox__medium' => 0,
@@ -191,7 +262,9 @@ function andromeda_news_field_default_field_instances() {
           'icon_link' => 0,
           'image' => 0,
           'image_content_images' => 0,
+          'image_content_images_wide' => 0,
           'image_front_page' => 0,
+          'image_gallery' => 0,
           'image_large' => 0,
           'image_list_image' => 0,
           'image_medium' => 0,
@@ -203,7 +276,7 @@ function andromeda_news_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 3,
     ),
   );
 
@@ -240,7 +313,7 @@ function andromeda_news_field_default_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textarea',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -248,6 +321,7 @@ function andromeda_news_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('(Meta)Description');
   t('Content');
+  t('Images');
   t('Lead');
   t('List image');
 

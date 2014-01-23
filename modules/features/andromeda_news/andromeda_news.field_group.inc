@@ -23,8 +23,8 @@ function andromeda_news_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_lead',
-      1 => 'field_content',
+      0 => 'field_content',
+      1 => 'field_content_images',
       2 => 'title',
     ),
     'format_type' => 'fieldset',
@@ -65,6 +65,34 @@ function andromeda_news_field_group_info() {
     ),
   );
   $export['group_images|node|news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_other|node|news|form';
+  $field_group->group_name = 'group_other';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Other',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_lead',
+      1 => 'field_list_image',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-other field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_other|node|news|form'] = $field_group;
 
   return $export;
 }
