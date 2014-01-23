@@ -113,7 +113,7 @@ function andromeda_news_field_default_field_instances() {
         'insert' => 1,
         'insert_absolute' => 0,
         'insert_class' => 'image--content',
-        'insert_default' => 'auto',
+        'insert_default' => 'image_content_images',
         'insert_styles' => array(
           'auto' => 0,
           'colorbox__content_images' => 0,
