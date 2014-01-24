@@ -29,7 +29,17 @@ function andromeda_slider_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['id'] = 'front-page-slider';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Nodequeue: Queue */
+  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+    'front_page_slider' => 'front_page_slider',
+    'staff' => 0,
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -37,6 +47,8 @@ function andromeda_slider_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h1';
+  $handler->display->display_options['fields']['title']['element_class'] = 'flexslider--title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Content: Lead */
@@ -44,6 +56,8 @@ function andromeda_slider_views_default_views() {
   $handler->display->display_options['fields']['field_lead']['table'] = 'field_data_field_lead';
   $handler->display->display_options['fields']['field_lead']['field'] = 'field_lead';
   $handler->display->display_options['fields']['field_lead']['label'] = '';
+  $handler->display->display_options['fields']['field_lead']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_lead']['element_class'] = 'flexslider--lead';
   $handler->display->display_options['fields']['field_lead']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_lead']['element_default_classes'] = FALSE;
   /* Field: Content: Front page */
@@ -63,6 +77,11 @@ function andromeda_slider_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Nodequeue: Position */
+  $handler->display->display_options['sorts']['position']['id'] = 'position';
+  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['sorts']['position']['field'] = 'position';
+  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -93,6 +112,7 @@ function andromeda_slider_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('queue'),
     t('Front page slider'),
   );
   $export['frontpage_slider'] = $view;

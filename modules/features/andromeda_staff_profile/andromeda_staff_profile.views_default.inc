@@ -45,11 +45,11 @@ function andromeda_staff_profile_views_default_views() {
   $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
     'staff' => 'staff',
   );
-  /* Sort criterion: Nodequeue: Queue ID */
-  $handler->display->display_options['sorts']['qid']['id'] = 'qid';
-  $handler->display->display_options['sorts']['qid']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['sorts']['qid']['field'] = 'qid';
-  $handler->display->display_options['sorts']['qid']['relationship'] = 'nodequeue_rel';
+  /* Sort criterion: Nodequeue: Position */
+  $handler->display->display_options['sorts']['position']['id'] = 'position';
+  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['sorts']['position']['field'] = 'position';
+  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';

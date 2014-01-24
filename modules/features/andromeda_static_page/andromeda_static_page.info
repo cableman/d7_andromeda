@@ -18,6 +18,7 @@ features[field_base][] = field_content_images
 features[field_base][] = field_inline_gallery
 features[field_group][] = group_content|node|static_page|form
 features[field_group][] = group_images|node|static_page|form
+features[field_group][] = group_other|node|static_page|form
 features[field_instance][] = node-static_page-field_content
 features[field_instance][] = node-static_page-field_content_files
 features[field_instance][] = node-static_page-field_content_images
