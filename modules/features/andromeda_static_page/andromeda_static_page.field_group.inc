@@ -56,6 +56,7 @@ function andromeda_static_page_field_group_info() {
       0 => 'field_lead',
       1 => 'field_list_image',
       2 => 'field_inline_gallery',
+      3 => 'field_frontpage_slider',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

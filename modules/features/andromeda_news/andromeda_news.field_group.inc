@@ -81,6 +81,7 @@ function andromeda_news_field_group_info() {
     'children' => array(
       0 => 'field_lead',
       1 => 'field_list_image',
+      2 => 'field_frontpage_slider',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

@@ -22,6 +22,7 @@ function andromeda_news_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Nyheder';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -117,6 +118,7 @@ function andromeda_news_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['news'] = array(
     t('Master'),
+    t('Nyheder'),
     t('more'),
     t('Apply'),
     t('Reset'),

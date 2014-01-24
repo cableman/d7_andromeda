@@ -216,6 +216,89 @@ function andromeda_static_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-static_page-field_frontpage_slider'
+  $field_instances['node-static_page-field_frontpage_slider'] = array(
+    'bundle' => 'static_page',
+    'deleted' => 0,
+    'description' => 'This image is used in the front page slider.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_frontpage_slider',
+    'label' => 'Front page',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'frontpage_images',
+      'file_extensions' => 'png jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 'auto',
+          'colorbox__content_images' => 0,
+          'colorbox__content_images_wide' => 0,
+          'colorbox__flexslider_full' => 0,
+          'colorbox__flexslider_thumbnail' => 0,
+          'colorbox__front_page' => 0,
+          'colorbox__gallery' => 0,
+          'colorbox__large' => 0,
+          'colorbox__list_image' => 0,
+          'colorbox__medium' => 0,
+          'colorbox__personale' => 0,
+          'colorbox__thumbnail' => 0,
+          'icon_link' => 0,
+          'image' => 0,
+          'image_content_images' => 0,
+          'image_content_images_wide' => 0,
+          'image_flexslider_full' => 0,
+          'image_flexslider_thumbnail' => 0,
+          'image_front_page' => 0,
+          'image_gallery' => 0,
+          'image_large' => 0,
+          'image_list_image' => 0,
+          'image_medium' => 0,
+          'image_personale' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-static_page-field_inline_gallery'
   $field_instances['node-static_page-field_inline_gallery'] = array(
     'bundle' => 'static_page',
@@ -465,11 +548,13 @@ function andromeda_static_page_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Content');
   t('Files');
+  t('Front page');
   t('Gallery');
   t('Images');
   t('Lead');
   t('List image');
   t('Page description');
+  t('This image is used in the front page slider.');
 
   return $field_instances;
 }
