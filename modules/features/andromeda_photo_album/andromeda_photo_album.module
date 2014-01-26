@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Photo album feature.
+ */
+
+include_once 'andromeda_photo_album.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Static page feature.
+ */
+
+include_once 'andromeda_static_page.features.inc';
