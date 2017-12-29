@@ -1,0 +1,10 @@
+.cache
+.project
+.settings
+*/_notes
+.DS_Store
+._*
+settings.php
+files
+*.patch
+*~

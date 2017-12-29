@@ -1,0 +1,7 @@
+/**
+ * @file
+ * IE8 stylesheet fixes.
+ */
+img {
+  max-width: none;
+}
