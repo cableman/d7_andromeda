@@ -1,0 +1,142 @@
+/**
+ * @file
+ * Style the front page flex-slider.
+ *
+ * A lot of the stuff in here is just overriding the default styles that comes
+ * with flex-slider.
+ */
+
+// If not imported here the shadow image effect will not work.
+@import "theme/_theme-vars";
+
+.flex-control-nav {
+  li {
+    margin: 0 4px;
+  }
+
+  bottom: -35px;
+}
+
+.flex-control-paging li a {
+  background: transparent url(../images/graphic-slider-dots-default.png) left top no-repeat;
+  box-shadow: none;
+
+  &:hover {
+    background: transparent url(../images/graphic-slider-dots-active.png) left top no-repeat;
+    box-shadow: 0 0 20px $blue;
+  }
+}
+
+.flex-control-paging li a.flex-active {
+  background: transparent url(../images/graphic-slider-dots-active.png) left top no-repeat;
+  box-shadow: none;
+}
+
+#front-page-slider.flexslider {
+  position: relative;
+  border: 1px solid $shadow;
+
+  @include single-box-shadow($shadow, 0px, 0px, 2px, 0, false);
+  @include border-radius($border-radius);
+
+  img {
+    @include border-radius($border-radius);
+  }
+
+  margin: 0 0 50px;
+
+  .flexslider--content {
+    position: absolute;
+    bottom: 5%;
+
+    width: 98%;
+    padding: 1%;
+
+    @include breakpoint($breakpoint-small) {
+      width: 50%;
+      min-height: 100px;
+      padding: 1% 14% 1% 1%;
+    }
+
+    background: transparent url(../images/back-slider-title.png) left top repeat;
+    background: rgba(12,79,136,0.7);
+
+    z-index: 20;
+  }
+
+  .flexslider--title {
+    font-size: 22px;
+
+    a {
+      color: $white;
+      text-decoration: none;
+      text-shadow: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .flexslider--lead {
+    display: none;
+
+    color: $white;
+    text-shadow: none;
+
+    @include breakpoint($breakpoint-small) {
+      display: block;
+    }
+  }
+
+  .flex-direction-nav {
+    display: none;
+
+    @include breakpoint($breakpoint-medium) {
+      display: block;
+
+      position: absolute;
+      left: 51%;
+      bottom: 25%;
+      z-index: 30;
+
+      li {
+        float: left;
+        padding-right: 14px;
+      }
+
+      .flex-prev {
+        position: static;
+        top: 0;
+        left: 0;
+
+        display: block;
+        width: 43px;
+        height: 43px;
+
+        overflow: hidden;
+        text-indent: -999em;
+
+        background: transparent url(../images/graphic-slider-prev.png) left top no-repeat;
+        opacity: 0.8;
+      }
+
+      .flex-next {
+        position: static;
+        top: 0;
+        left: 0;
+
+        display: block;
+        width: 43px;
+        height: 43px;
+
+        overflow: hidden;
+        text-indent: -999em;
+        text-align: left;
+
+        background: transparent url(../images/graphic-slider-next.png) left top no-repeat;
+        opacity: 0.8;
+      }
+    }
+  }
+}

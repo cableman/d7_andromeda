@@ -1,0 +1,29 @@
+/**
+ * @file
+ * Breakpoints
+ *
+ * Should contain breakpoint variables and breakpoints related mixins.
+ *
+ */
+
+/* Breakpoints
+   *
+   * These are only examples, change/add/remove so they match your needs.
+   *
+   ================================================================================================================== */
+
+$breakpoint-small: 480px;
+$breakpoint-medium: 767px;
+$breakpoint-large: 940px;
+
+/* Mixins
+   *
+   * Use this mixin to change styling for your rulesets depending on a breakpoint (width).
+   *
+   * Usage example: @include breakpoint($breakpoint-x).
+   *
+   ================================================================================================================== */
+
+@mixin breakpoint($breakpoint) {
+  @media screen and (min-width: $breakpoint) { @content; }
+}

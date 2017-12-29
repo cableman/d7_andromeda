@@ -1,0 +1,70 @@
+/**
+ * Style of basic elements one every page.
+ */
+
+// If not imported here the shadow image effect will not work.
+@import "theme/_theme-vars";
+
+/**
+ * Default image style.
+   ================================================================================================================== */
+
+%image {
+  @include single-box-shadow($shadow, 2px, 2px, 4px, 0, false);
+
+  margin: 8px;
+}
+
+/**
+ * Style image gallery fields on static pages.
+   ================================================================================================================== */
+
+.field-name-field-inline-gallery .field-item {
+  float: left;
+  margin-right: 8px;
+  margin-bottom: 8px;
+
+  &:nth-child(4n+4) {
+    margin-right: 0;
+  }
+}
+
+.image--title {
+  @extend %image;
+
+  padding: 8px 8px 0 8px;
+
+  img {
+    margin-bottom: 8px;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+}
+
+.image--content {
+  @extend %image;
+}
+
+.field-name-field-content img {
+  @extend %image;
+}
+
+.float--right,
+.float--left {
+  text-align: center;
+}
+
+@include breakpoint($breakpoint-medium) {
+  .float--right {
+    float: right;
+    margin-left: 10px;
+  }
+
+  .float--left {
+    float: left;
+    margin-right: 10px;
+  }
+}

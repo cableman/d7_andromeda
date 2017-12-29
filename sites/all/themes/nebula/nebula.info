@@ -1,0 +1,23 @@
+name = Nebula
+description = Responsive theme for andromeda.dk 
+core = 7.x
+
+; Regions
+regions[header] = Header
+regions[featured] = Featured
+regions[content] = Primary content
+regions[secondary_content] = Secondary content
+regions[tertiary_content]  = Tertiary content
+regions[footer] = Footer
+
+; JavaScripts
+scripts[] = scripts/jquery.resmenu.min.js
+scripts[] = scripts/menu.min.js
+
+; Stylesheets
+stylesheets[all][] = css/fontello.css
+stylesheets[all][] = css/styles.css
+
+; Disable stylesheets
+stylesheets[all][] = system.theme.css
+stylesheets[all][] = system.messages.css

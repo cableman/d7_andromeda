@@ -1,0 +1,226 @@
+/**
+ * Layouts
+ */
+
+%center-layout-container {
+  margin-right: auto;
+  margin-left: auto;
+
+  max-width: 768px;
+
+  @include breakpoint($breakpoint-large) {
+    max-width: 960px;
+  }
+}
+
+body {
+  background: $background url('../images/back-body.jpg') left top repeat;
+}
+
+/* Header
+   ================================================================================================================== */
+
+header {
+  @extend %center-layout-container;
+
+  padding: 20px 8px 0;
+  overflow: hidden;
+
+  .header--inner {
+
+    .logo img {
+      height: 50px;
+    }
+
+    @include breakpoint($breakpoint-medium) {
+      $zen-column-count: 4;
+
+      @include zen-grid-container;
+
+      margin-bottom: 20px;
+
+      .logo {
+        @include zen-grid-item(1, 1);
+
+        img {
+          height: 80px;
+
+          @include breakpoint($breakpoint-large) {
+            height: 100px;
+          }
+        }
+      }
+
+      .menu-wrapper {
+        @include zen-grid-item(3, 2);
+      }
+    }
+  }
+}
+
+/* Page
+   ================================================================================================================== */
+
+.page {
+
+  .video-filter {
+    display: none;
+    @include breakpoint($breakpoint-small) {
+      display: block;
+    }
+  }
+
+  .content-inner {
+    @extend %center-layout-container;
+
+    padding: 0 10px;
+    @include breakpoint($breakpoint-medium) {
+      padding: 0;
+    }
+  }
+
+  $zen-column-count: 4;
+
+  /**
+   * One column layout.
+   */
+  &.layout--one-col .content-inner {
+    $zen-column-count: 1;
+    @include zen-grid-container;
+
+    .primary-content {
+      @include zen-grid-item(1, 1);
+    }
+  }
+
+  /**
+   * Two column layout left.
+   */
+  &.layout--two-col--left .content-inner {
+    $zen-column-count: 4;
+    @include zen-grid-container;
+
+    .primary-content {
+      @include breakpoint($breakpoint-medium) {
+        @include zen-grid-item(3, 2);
+      }
+    }
+
+    .secondary-content {
+      @include breakpoint($breakpoint-medium) {
+        @include zen-grid-item(1, 1);
+      }
+    }
+  }
+
+  /**
+  * Two column layout right.
+  */
+  &.layout--two-col--right .content-inner {
+    $zen-column-count: 4;
+    @include zen-grid-container;
+
+    .primary-content {
+      @include zen-grid-item(3, 1);
+    }
+
+    .tertiary_content {
+      @include zen-grid-item(1, 4);
+    }
+  }
+
+  /**
+   * Three column layout.
+   */
+  &.layout--three-col .content-inner {
+
+    @include zen-grid-container;
+
+    .primary-content {
+      @include zen-grid-item(2, 2);
+    }
+
+    .secondary-content {
+      @include zen-grid-item(1, 1);
+    }
+
+    .tertiary_content {
+      @include zen-grid-item(1, 4);
+    }
+  }
+}
+
+/* Footer
+   ================================================================================================================== */
+
+footer {
+  background: $background url('../images/back-body-footer.png') left top repeat;
+  padding-top: 40px;
+  margin-top: 40px;
+
+  .block-block .content {
+    padding: 8px 8px 0 0;
+  }
+}
+
+.footer--outer {
+  background-image: url('../images/compass_rose.png');
+  background-repeat: no-repeat;
+  background-position: 100% 300%;
+  height: 290px;
+
+
+  @include breakpoint($breakpoint-medium) {
+    // Re-position the background image.
+    background-position: 75% 100%;
+    height: 380px;
+  }
+
+  @extend %center-layout-container;
+
+
+  .footer--inner {
+    $zen-column-count: 1;
+
+    @include zen-grid-container;
+
+    #block-mailchimp-lists-nyheder,
+    #block-block-2,
+    #block-block-3 {
+      display: none;
+    }
+
+    #block-block-4 {
+      text-align: center;
+      @include zen-grid-item(1, 1);
+    }
+  }
+
+  @include breakpoint($breakpoint-medium) {
+    .footer--inner {
+      $zen-column-count: 4;
+
+      @include zen-grid-container;
+
+      #block-mailchimp-lists-nyheder {
+        @include zen-grid-item(1, 1);
+        display: block;
+      }
+
+      #block-block-2 {
+        @include zen-grid-item(1, 2);
+        display: block;
+      }
+
+      #block-block-3 {
+        @include zen-grid-item(1, 3);
+        display: block;
+      }
+
+      #block-block-4 {
+        text-align: left;
+        @include zen-grid-item(1, 4);
+      }
+    }
+  }
+}
