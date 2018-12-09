@@ -10,6 +10,99 @@
 function andromeda_news_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-news-field_billede'.
+  $field_instances['node-news-field_billede'] = array(
+    'bundle' => 'news',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'colorbox',
+        'settings' => array(
+          'colorbox_caption' => 'auto',
+          'colorbox_caption_custom' => '',
+          'colorbox_gallery' => 'post',
+          'colorbox_gallery_custom' => '',
+          'colorbox_image_style' => '',
+          'colorbox_multivalue_index' => NULL,
+          'colorbox_node_style' => 'photo_album',
+          'colorbox_node_style_first' => '',
+        ),
+        'type' => 'colorbox',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_billede',
+    'label' => 'Billede',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'news_photo',
+      'file_extensions' => 'png jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'multiupload_imagefield_widget',
+      'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 0,
+          'colorbox__content_images' => 0,
+          'colorbox__content_images_wide' => 0,
+          'colorbox__flexslider_full' => 0,
+          'colorbox__flexslider_thumbnail' => 0,
+          'colorbox__front_page' => 0,
+          'colorbox__gallery' => 0,
+          'colorbox__large' => 0,
+          'colorbox__list_image' => 0,
+          'colorbox__medium' => 0,
+          'colorbox__personale' => 0,
+          'colorbox__photo_album' => 0,
+          'colorbox__photo_album_full' => 0,
+          'colorbox__thumbnail' => 0,
+          'icon_link' => 0,
+          'image' => 0,
+          'image_content_images' => 0,
+          'image_content_images_wide' => 0,
+          'image_flexslider_full' => 0,
+          'image_flexslider_thumbnail' => 0,
+          'image_front_page' => 0,
+          'image_gallery' => 0,
+          'image_large' => 0,
+          'image_list_image' => 0,
+          'image_medium' => 0,
+          'image_personale' => 0,
+          'image_photo_album' => 0,
+          'image_photo_album_full' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_miw',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-news-field_content'.
   $field_instances['node-news-field_content'] = array(
     'bundle' => 'news',
@@ -478,6 +571,7 @@ function andromeda_news_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('(Meta)Description');
+  t('Billede');
   t('Content');
   t('Files');
   t('Front page');
