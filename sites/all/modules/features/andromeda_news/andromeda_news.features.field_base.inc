@@ -10,21 +10,13 @@
 function andromeda_news_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_content'
+  // Exported field_base: 'field_content'.
   $field_bases['field_content'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_content',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -37,21 +29,36 @@ function andromeda_news_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_frontpage_slider'
+  // Exported field_base: 'field_files'.
+  $field_bases['field_files'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_files',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 1,
+      'display_field' => 1,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
+  );
+
+  // Exported field_base: 'field_frontpage_slider'.
   $field_bases['field_frontpage_slider'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_frontpage_slider',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -67,21 +74,13 @@ function andromeda_news_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_lead'
+  // Exported field_base: 'field_lead'.
   $field_bases['field_lead'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_lead',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -94,21 +93,13 @@ function andromeda_news_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_list_image'
+  // Exported field_base: 'field_list_image'.
   $field_bases['field_list_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_list_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -124,14 +115,13 @@ function andromeda_news_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'meta_description'
+  // Exported field_base: 'meta_description'.
   $field_bases['meta_description'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'meta_description',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'metatags_quick',

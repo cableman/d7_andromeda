@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function andromeda_static_page_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -35,13 +35,14 @@ function andromeda_static_page_field_group_info() {
         'description' => '',
         'classes' => 'group-content field-group-fieldset',
         'required_fields' => 1,
+        'id' => 'node_static_page_form_group_content',
       ),
     ),
   );
-  $export['group_content|node|static_page|form'] = $field_group;
+  $field_groups['group_content|node|static_page|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_images|node|static_page|form';
   $field_group->group_name = 'group_images';
@@ -65,10 +66,11 @@ function andromeda_static_page_field_group_info() {
         'description' => '',
         'classes' => 'group-images field-group-fieldset',
         'required_fields' => 1,
+        'id' => 'node_static_page_form_group_images',
       ),
     ),
   );
-  $export['group_images|node|static_page|form'] = $field_group;
+  $field_groups['group_images|node|static_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -95,10 +97,17 @@ function andromeda_static_page_field_group_info() {
         'description' => '',
         'classes' => 'group-other field-group-fieldset',
         'required_fields' => 1,
+        'id' => 'node_static_page_form_group_other',
       ),
     ),
   );
-  $export['group_other|node|static_page|form'] = $field_group;
+  $field_groups['group_other|node|static_page|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Content');
+  t('Images');
+  t('Other');
+
+  return $field_groups;
 }

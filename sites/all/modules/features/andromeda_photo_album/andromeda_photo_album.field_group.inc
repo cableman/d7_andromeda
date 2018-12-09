@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function andromeda_photo_album_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -35,10 +35,11 @@ function andromeda_photo_album_field_group_info() {
         'description' => '',
         'classes' => 'group-content field-group-fieldset',
         'required_fields' => 1,
+        'id' => 'node_photo_album_form_group_content',
       ),
     ),
   );
-  $export['group_content|node|photo_album|form'] = $field_group;
+  $field_groups['group_content|node|photo_album|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -64,10 +65,16 @@ function andromeda_photo_album_field_group_info() {
         'description' => '',
         'classes' => 'group-other field-group-fieldset',
         'required_fields' => 1,
+        'id' => 'node_photo_album_form_group_other',
       ),
     ),
   );
-  $export['group_other|node|photo_album|form'] = $field_group;
+  $field_groups['group_other|node|photo_album|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Content');
+  t('Other');
+
+  return $field_groups;
 }
