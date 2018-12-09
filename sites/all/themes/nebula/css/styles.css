@@ -1605,4 +1605,7 @@ header .menu-name-menu-secondary-menu a {
     font-weight: normal
 }
 
+.node-news .field-name-field-content img {
+    margin-left: 1em;
+    margin-right: 2em;
 }
