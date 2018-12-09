@@ -10,21 +10,13 @@
 function andromeda_static_page_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_content_files'
+  // Exported field_base: 'field_content_files'.
   $field_bases['field_content_files'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_content_files',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -41,21 +33,13 @@ function andromeda_static_page_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_content_images'
+  // Exported field_base: 'field_content_images'.
   $field_bases['field_content_images'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_content_images',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -71,21 +55,13 @@ function andromeda_static_page_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_inline_gallery'
+  // Exported field_base: 'field_inline_gallery'.
   $field_bases['field_inline_gallery'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_inline_gallery',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',

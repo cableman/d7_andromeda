@@ -10,21 +10,13 @@
 function andromeda_photo_album_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_album_images'
+  // Exported field_base: 'field_album_images'.
   $field_bases['field_album_images'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_album_images',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -40,14 +32,13 @@ function andromeda_photo_album_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_flicker'
+  // Exported field_base: 'field_flicker'.
   $field_bases['field_flicker'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_flicker',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',

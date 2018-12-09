@@ -10,7 +10,7 @@
 function andromeda_static_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-static_page-field_content'
+  // Exported field_instance: 'node-static_page-field_content'.
   $field_instances['node-static_page-field_content'] = array(
     'bundle' => 'static_page',
     'default_value' => NULL,
@@ -76,7 +76,7 @@ function andromeda_static_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-static_page-field_content_files'
+  // Exported field_instance: 'node-static_page-field_content_files'.
   $field_instances['node-static_page-field_content_files'] = array(
     'bundle' => 'static_page',
     'deleted' => 0,
@@ -143,7 +143,7 @@ function andromeda_static_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-static_page-field_content_images'
+  // Exported field_instance: 'node-static_page-field_content_images'.
   $field_instances['node-static_page-field_content_images'] = array(
     'bundle' => 'static_page',
     'deleted' => 0,
@@ -216,7 +216,7 @@ function andromeda_static_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-static_page-field_frontpage_slider'
+  // Exported field_instance: 'node-static_page-field_frontpage_slider'.
   $field_instances['node-static_page-field_frontpage_slider'] = array(
     'bundle' => 'static_page',
     'deleted' => 0,
@@ -295,7 +295,7 @@ function andromeda_static_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-static_page-field_inline_gallery'
+  // Exported field_instance: 'node-static_page-field_inline_gallery'.
   $field_instances['node-static_page-field_inline_gallery'] = array(
     'bundle' => 'static_page',
     'deleted' => 0,
@@ -312,6 +312,7 @@ function andromeda_static_page_field_default_field_instances() {
           'colorbox_image_style' => '',
           'colorbox_multivalue_index' => NULL,
           'colorbox_node_style' => 'gallery',
+          'colorbox_node_style_first' => '',
         ),
         'type' => 'colorbox',
         'weight' => 6,
@@ -373,7 +374,7 @@ function andromeda_static_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-static_page-field_lead'
+  // Exported field_instance: 'node-static_page-field_lead'.
   $field_instances['node-static_page-field_lead'] = array(
     'bundle' => 'static_page',
     'default_value' => NULL,
@@ -439,7 +440,7 @@ function andromeda_static_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-static_page-field_list_image'
+  // Exported field_instance: 'node-static_page-field_list_image'.
   $field_instances['node-static_page-field_list_image'] = array(
     'bundle' => 'static_page',
     'deleted' => 0,
@@ -502,7 +503,7 @@ function andromeda_static_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-static_page-meta_description'
+  // Exported field_instance: 'node-static_page-meta_description'.
   $field_instances['node-static_page-meta_description'] = array(
     'bundle' => 'static_page',
     'default_value' => NULL,
