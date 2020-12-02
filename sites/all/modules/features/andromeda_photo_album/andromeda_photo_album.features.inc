@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * andromeda_photo_album.features.inc

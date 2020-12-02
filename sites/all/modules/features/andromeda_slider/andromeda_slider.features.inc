@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * andromeda_slider.features.inc

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * andromeda_news.features.field_base.inc
@@ -9,28 +10,6 @@
  */
 function andromeda_news_field_default_field_bases() {
   $field_bases = array();
-
-  // Exported field_base: 'field_billede'.
-  $field_bases['field_billede'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_billede',
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
-  );
 
   // Exported field_base: 'field_content'.
   $field_bases['field_content'] = array(
@@ -49,29 +28,6 @@ function andromeda_news_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_files'.
-  $field_bases['field_files'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_files',
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'file',
-    'settings' => array(
-      'display_default' => 1,
-      'display_field' => 1,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'file',
   );
 
   // Exported field_base: 'field_frontpage_slider'.

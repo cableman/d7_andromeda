@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * andromeda_news.field_group.inc
