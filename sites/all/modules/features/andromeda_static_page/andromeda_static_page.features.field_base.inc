@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * andromeda_static_page.features.field_base.inc

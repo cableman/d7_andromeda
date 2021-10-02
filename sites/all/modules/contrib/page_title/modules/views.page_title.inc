@@ -12,7 +12,7 @@
 function views_page_title_pattern_alter(&$pattern, &$types) {
   $menu = menu_get_item();
 
-  if ($menu['page_callback'] == 'views_page' && is_array($menu['page_arguments'])) {
+  if (is_array($menu) && $menu['page_callback'] == 'views_page' && is_array($menu['page_arguments'])) {
     // Get the args from the menu router
     $args = $menu['page_arguments'];
     $name = array_shift($args);

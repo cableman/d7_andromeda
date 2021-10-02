@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * andromeda_slider.views_default.inc
@@ -32,7 +33,7 @@ function andromeda_slider_views_default_views() {
   $handler->display->display_options['style_options']['id'] = 'front-page-slider';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Relationship: Nodequeue: Queue */
+  /* Relationship: Nodekø: Kø */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
   $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
@@ -41,7 +42,7 @@ function andromeda_slider_views_default_views() {
     'front_page_slider' => 'front_page_slider',
     'staff' => 0,
   );
-  /* Field: Content: Title */
+  /* Field: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -53,7 +54,7 @@ function andromeda_slider_views_default_views() {
   $handler->display->display_options['fields']['title']['element_class'] = 'flexslider--title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Lead */
+  /* Field: Indhold: Lead */
   $handler->display->display_options['fields']['field_lead']['id'] = 'field_lead';
   $handler->display->display_options['fields']['field_lead']['table'] = 'field_data_field_lead';
   $handler->display->display_options['fields']['field_lead']['field'] = 'field_lead';
@@ -63,7 +64,7 @@ function andromeda_slider_views_default_views() {
   $handler->display->display_options['fields']['field_lead']['element_class'] = 'flexslider--lead';
   $handler->display->display_options['fields']['field_lead']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_lead']['element_default_classes'] = FALSE;
-  /* Field: Content: Front page */
+  /* Field: Indhold: Front page */
   $handler->display->display_options['fields']['field_frontpage_slider']['id'] = 'field_frontpage_slider';
   $handler->display->display_options['fields']['field_frontpage_slider']['table'] = 'field_data_field_frontpage_slider';
   $handler->display->display_options['fields']['field_frontpage_slider']['field'] = 'field_frontpage_slider';
@@ -86,19 +87,19 @@ function andromeda_slider_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_class'] = 'flexslider--content';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Sort criterion: Nodequeue: Position */
+  /* Sort criterion: Nodekø: Placering */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
   $handler->display->display_options['sorts']['position']['field'] = 'position';
   $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Indhold: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Nodequeue: In queue */
+  /* Filter criterion: Nodekø: I kø */
   $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
   $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
   $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
@@ -122,7 +123,7 @@ function andromeda_slider_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('queue'),
+    t('kø'),
     t('<h1 class="flexslider--title">[title]</h1><p class="flexslider--lead">[field_lead]</p>'),
     t('Front page slider'),
   );

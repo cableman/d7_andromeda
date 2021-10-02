@@ -12,7 +12,7 @@
 function taxonomy_page_title_alter(&$title) {
   $menu_item = menu_get_item();
   // If we're looking at a taxonomy term page, get the term title.
-  if ( !strncmp($menu_item['path'], 'taxonomy/term/%', 15) &&
+  if ( is_array($menu_item) && !strncmp($menu_item['path'], 'taxonomy/term/%', 15) &&
        ($term = menu_get_object('taxonomy_term', 2)) &&
        variable_get('page_title_vocab_' . $term->vocabulary_machine_name . '_showfield', 0) &&
        ($term_title = page_title_load_title($term->tid, 'term')) ) {
@@ -28,7 +28,7 @@ function taxonomy_page_title_pattern_alter(&$pattern, &$types) {
   $menu_item = menu_get_item();
 
   // Taxonomy Term Page
-  if ( !strncmp($menu_item['path'], 'taxonomy/term/%', 15) &&
+  if (is_array($menu_item) && !strncmp($menu_item['path'], 'taxonomy/term/%', 15) &&
        ($term = menu_get_object('taxonomy_term', 2)) ) {
     $types['term'] = $term;
     $pattern = variable_get('page_title_vocab_' . $term->vocabulary_machine_name, '');
