@@ -207,7 +207,7 @@ function checklistapi_checklist_form_submit($form, &$form_state) {
  *   TRUE when in compact mode, or FALSE when in expanded mode.
  */
 function checklistapi_compact_mode() {
-  return $_COOKIE['Drupal_visitor_checklistapi_compact_mode'] ?? variable_get('checklistapi_compact_mode', FALSE);
+  return !empty($_COOKIE['Drupal_visitor_checklistapi_compact_mode']) ? $_COOKIE['Drupal_visitor_checklistapi_compact_mode'] : variable_get('checklistapi_compact_mode', FALSE);
 }
 
 /**
