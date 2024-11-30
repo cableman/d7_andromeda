@@ -629,29 +629,55 @@ function file_entity_add_upload_submit($form, &$form_state) {
   if ($save) {
     $file = file_load($form_state['storage']['upload']);
     if ($file) {
-      if (file_uri_scheme($file->uri) != $form_state['storage']['scheme']) {
-        $file_destination = $form_state['storage']['scheme'] . '://' . file_uri_target($file->uri);
-        $file_destination = file_stream_wrapper_uri_normalize($file_destination);
-        if ($moved_file = file_move($file, $file_destination, FILE_EXISTS_RENAME)) {
-          // Only re-assign the file object if file_move() did not fail.
-          $file = $moved_file;
-        }
-      }
       $file->type = $form_state['storage']['type'];
       $file->display = TRUE;
-
-      // Change the file from temporary to permanent.
-      $file->status = FILE_STATUS_PERMANENT;
-
       // Save the form fields.
       // Keep in mind that the values for the Field API fields must be in
       // $form_state['values'] and not in ['storage']. This is true as long as
       // the fields are on the last page of the multi step form.
       entity_form_submit_build_entity('file', $file, $form, $form_state);
 
-      file_save($file);
-      $form_state['file'] = $file;
-      drupal_set_message(t('@type %name was uploaded.', array('@type' => file_entity_type_get_name($file), '%name' => $file->filename)));
+      if (file_uri_scheme($file->uri) != $form_state['storage']['scheme']) {
+        $file_destination = $form_state['storage']['scheme'] . '://' . file_uri_target($file->uri);
+        $file_destination = file_stream_wrapper_uri_normalize($file_destination);
+        // Create the directory in case it doesn't exist.
+        $upload_location = dirname($file_destination);
+        file_prepare_directory($upload_location, FILE_CREATE_DIRECTORY);
+        if ($moved_file = file_move($file, $file_destination, FILE_EXISTS_RENAME)) {
+          // Only re-assign the file object if file_move() did not fail.
+          $file = $moved_file;
+          $file_in_final_location = TRUE;
+        }
+        else {
+          $file_in_final_location = FALSE;
+        }
+      }
+      else {
+        $file_in_final_location = TRUE;
+      }
+
+      $substitutions = array(
+        '@type' => file_entity_type_get_name($file),
+        '%name' => $file->filename,
+      );
+
+      // Only save the file if any necessary move was successful.
+      if ($file_in_final_location) {
+        // Change the file from temporary to permanent.
+        $file->status = FILE_STATUS_PERMANENT;
+        file_save($file);
+        // Record that the module (in this case, the File module) is using the
+        // file. Without the call to file_usage_add, file_managed_file_validate()
+        // produces an error upon saving the form, saying that the uploaded file
+        // may not be referenced.
+        file_usage_add($file, 'file', 'file', $file->fid);
+        $form_state['file'] = $file;
+        drupal_set_message(t('@type %name was uploaded.', $substitutions));
+      }
+      else {
+        file_delete($file, TRUE);
+        drupal_set_message(t('@type %name was not saved.', $substitutions), 'error');
+      }
     }
     else {
       drupal_set_message(t('An error occurred and no file was uploaded.'), 'error');
@@ -831,39 +857,34 @@ function file_entity_edit($form, &$form_state, $file) {
     // Set up replacement file validation.
     $replacement_options = !empty($form_state['#upload_options']) ? $form_state['#upload_options'] : array();
 
-    // The replacement file must have an extension valid for the original type.
-    $file_extensions = array();
-    $file_type_name = isset($file->type) ? $file->type : file_get_type($file);
-    if (!empty($replacement_options['file_extensions'])) {
-      $file_extensions = explode(' ', $replacement_options['file_extensions']);
-    }
-    elseif ($file_type_name && ($file_type = file_type_load($file_type_name))) {
-      $file_extensions = file_type_get_valid_extensions($file_type);
-    }
+    // Replacement file must have the same extension as the original file.
+    $replacement_options['file_extensions'] = pathinfo($file->uri, PATHINFO_EXTENSION);
 
-    // Set allowed file extensions.
-    if (!empty($file_extensions)) {
-      // Set to type based file extensions.
-      $replacement_options['file_extensions'] = implode(' ', $file_extensions);
+    // Replacement file must also be one of the allowed filetypes.
+    $allowed_filetypes = explode(' ', variable_get('file_entity_default_allowed_extensions', 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm'));
+
+    if (!empty($replacement_options['file_extensions']) && in_array($replacement_options['file_extensions'], $allowed_filetypes)) {
+      $form['replace_upload'] = array(
+        '#type' => 'file',
+        '#title' => t('Replace file'),
+        '#description' => t('This file will replace the existing file. This action cannot be undone.'),
+        '#upload_validators' => file_entity_get_upload_validators($replacement_options),
+        '#pre_render' => array('file_entity_upload_validators_pre_render'),
+      );
+      $form['replace_keep_original_filename'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Keep original filename'),
+        '#default_value' => variable_get('file_entity_file_replace_options_keep_original_filename', FALSE),
+        '#description' => t('Rename the newly uploaded file to the name of the original file. This action cannot be undone.'),
+      );
     }
     else {
-      // Fallback to the extension of the current file.
-      $replacement_options['file_extensions'] = pathinfo($file->uri, PATHINFO_EXTENSION);
+      $form['replace_upload'] = array(
+        '#type' => 'item',
+        '#title' => t('Replace file'),
+        '#description' => t('This file cannot be replaced.'),
+      );
     }
-
-    $form['replace_upload'] = array(
-      '#type' => 'file',
-      '#title' => t('Replace file'),
-      '#description' => t('This file will replace the existing file. This action cannot be undone.'),
-      '#upload_validators' => file_entity_get_upload_validators($replacement_options),
-      '#pre_render' => array('file_entity_upload_validators_pre_render'),
-    );
-    $form['replace_keep_original_filename'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Keep original filename'),
-      '#default_value' => variable_get('file_entity_file_replace_options_keep_original_filename', FALSE),
-      '#description' => t('Rename the newly uploaded file to the name of the original file. This action cannot be undone.'),
-    );
   }
 
   $form['preview'] = file_view_file($file, 'preview');
@@ -1297,7 +1318,7 @@ function file_entity_get_upload_validators(array $options = array()) {
     $max_filesize = min($max_filesize, $file_entity_max_filesize);
   }
 
-  if (!empty($options['max_filesize']) && $options['max_filesize'] < $max_filesize) {
+  if (!empty($options['max_filesize']) && parse_size($options['max_filesize']) < $max_filesize) {
     $max_filesize = parse_size($options['max_filesize']);
   }
 
